@@ -1,7 +1,6 @@
 from app.values import instant,number
 from app.errors import DomainError
 from app.reasons import reject
-from decimal import Decimal
 FARES=[{"start":"2026-01-01T00:00:00+08:00","end":"2026-11-01T00:00:00+08:00","version":"F1","amount":"2.00"},{"start":"2026-11-01T00:00:00+08:00","end":"2027-01-01T00:00:00+08:00","version":"F2","amount":"2.50"}]
 def select_fare(at,fares):
     hits=[r for r in fares if instant(r["start"])<=at<instant(r["end"])]
